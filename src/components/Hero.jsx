@@ -108,6 +108,8 @@ export default function Hero() {
               </button>
             </div>
 
+
+
             {/* Gauge */}
             <div className="flex justify-center">
               <BasicGauges total={leftCard_Data.total} count={leftCard_Data.count} />
