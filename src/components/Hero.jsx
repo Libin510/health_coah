@@ -142,7 +142,7 @@ export default function Hero({isAdmin}) {
             onClick={() => {
               router.push("/login");
             }}
-            className="text-gray-600 text-lg hover:text-gray-800 bg-[#FFFFFF] rounded-full py-[10.62px] px-[31.86] font-bold cursor-pointer"
+            className="text-gray-600 text-lg hover:text-gray-800 bg-[#FFFFFF] rounded-full py-[10.62px] px-[31.86px] font-bold cursor-pointer"
           >
             Admin login
           </button>
