@@ -1,16 +1,13 @@
-import * as React from "react";
+"use client";
+import React from "react";
 import Stack from "@mui/material/Stack";
 import {
   GaugeContainer,
-  Gauge,
   GaugeReferenceArc,
   GaugeValueArc,
   useGaugeState,
 } from "@mui/x-charts/Gauge";
 
-/**
- * Custom component to render text inside the Gauge with different font sizes.
- */
 function CustomGaugeText() {
   const { value, valueMax, cx, cy } = useGaugeState();
 
@@ -18,36 +15,33 @@ function CustomGaugeText() {
     return null;
   }
 
-  // Define font sizes and vertical offset for positioning
   const bigFontSize = 40;
   const smallFontSize = 10;
-  const verticalOffset = 25; // Adjust this value to control spacing between the two text lines
+  const verticalOffset = 25;
 
   return (
     <g>
-      {/* Text for the main value (e.g., "75") */}
       <text
         x={cx}
-        y={cy - verticalOffset / 2} // Position slightly above the center
+        y={cy - verticalOffset / 2}
         textAnchor="middle"
         dominantBaseline="central"
         style={{
           fontSize: `${bigFontSize}px`,
           fontWeight: "bold",
-          fill: "currentColor", // Inherit text color
+          fill: "#212121",
         }}
       >
         {value}
       </text>
-      {/* Text for "out of max" (e.g., "out of 150") */}
       <text
         x={cx}
-        y={cy + verticalOffset / 2} // Position slightly below the center
+        y={cy + verticalOffset / 2}
         textAnchor="middle"
         dominantBaseline="central"
         style={{
           fontSize: `${smallFontSize}px`,
-          fill: "#6B7280", // Inherit text color
+          fill: "#757575",
         }}
       >
         {`OUT OF ${valueMax}`}
@@ -58,28 +52,21 @@ function CustomGaugeText() {
 
 export default function BasicGauges() {
   return (
-    <Stack
-      direction={{ xs: "column", md: "row" }}
-      spacing={{ xs: 1, md: 3 }}
-      sx={{ p: 3 }}
-    >
-      {/* Second Gauge with custom text */}
+    <Stack direction={{ xs: "column", md: "row" }} spacing={{ xs: 1, md: 3 }} sx={{ p: 3 }}>
       <GaugeContainer
         width={150}
         height={150}
-        value={20} // Example value
+        value={20}
         startAngle={-95}
         endAngle={95}
         innerRadius="68%"
         outerRadius="100%"
         cornerRadius={15}
-        valueMax={40} // Example max value
+        valueMax={40}
         valueMin={-50}
       >
-        {/* Render the default arcs */}
-        <GaugeReferenceArc />
-        <GaugeValueArc />
-        {/* Render the custom text component */}
+        <GaugeReferenceArc sx={{ fill: "#E0E0E0" }} />
+        <GaugeValueArc sx={{ fill: "#2075FF" }} />
         <CustomGaugeText />
       </GaugeContainer>
     </Stack>
