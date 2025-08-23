@@ -69,7 +69,7 @@ export default function FAQ({ data, isAdmin }) {
                     className="w-full outline-none"
                   />
                 ) : (
-                  <span className="text-black font-medium text-[32px]">
+                  <span className="text-gray-300 font-medium text-xl md:text-[32px]">
                     {faq.answer}
                   </span>
                 )}
