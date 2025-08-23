@@ -48,10 +48,10 @@ export default function FAQ({ data, isAdmin }) {
                   type="text"
                   value={faq.question}
                   onChange={(e) => handleQuestionChange(index, e.target.value)}
-                  className="w-full outline-none text-black font-medium text-[32px]"
+                  className="w-full outline-none text-black font-medium text-xl md:text-[32px]"
                 />
               ) : (
-                <span className="text-black font-medium text-[32px]">
+                <span className="text-black font-medium text-xl md:text-[32px]">
                   {faq.question}
                 </span>
               )}
