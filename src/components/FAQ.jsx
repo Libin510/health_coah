@@ -22,11 +22,11 @@ export default function FAQ({ data, isAdmin }) {
 
   return (
     <section className="py-20 px-6 bg-[#FCFCFD]">
-      <div className="text-center mb-12 max-w-[31vw] w-full mx-auto">
-        <p className="text-5xl font-semibold text-center mb-2">
+      <div className="text-center mb-12 md:max-w-[31vw] w-full mx-auto">
+        <p className="text-2xl sm:text-4xl md:text-5xl font-semibold text-center mb-2">
           Frequently Asked Questions
         </p>
-        <p className="text-center text-lg font-medium text-[#777E90] mb-10">
+        <p className="text-center text-sm sm:text-lg font-medium text-[#777E90] mb-10">
           Get answers to common questions about our AI health assistant app
         </p>
       </div>
